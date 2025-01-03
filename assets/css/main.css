@@ -1,0 +1,215 @@
+:root {
+    --primary: #6055ff;
+    --primary-hover: #9892ff;
+    --primary-active: #5049ce;
+    --secondary: #f5f5f5;
+    --br-sm: 0.25rem;
+    --br-md: 0.5rem;
+    --br-lg: 1rem;
+    --br-xl: 2rem;
+    --br-xxl: 4rem;
+    --br-full: 999px;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: var(--t-subtitle) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--t-header);
+}
+
+p, li {
+    color: var(--t-content);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    font-size: 16px;
+    margin-right: 0.25rem;
+    /* Make a smooth cubic-bezier transition */
+    transition: transform 0.5s cubic-bezier(0.85, 0.04, 0.2, 0.95), margin-right 0.5s cubic-bezier(0.85, 0.04, 0.2, 0.95);
+}
+
+.btn:hover i {
+    transform: rotate(15deg);
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--secondary);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--primary-active) !important;
+    border-color: var(--primary-active) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #101013;
+        --layer-1: #1e1e24;
+        --layer-2: #2b2b35;
+        --layer-3: #343441;
+        --layer-4: #414153;
+        --border-layer-1: #2a2a33;
+        --border-layer-2: #404052;
+        --border-layer-3: #52526e;
+        --border-layer-4: #5f5f7c;
+        --t-header: #fff;
+        --t-subtitle: #d8d7f0;
+        --t-content: #bdbcd6;
+        --t-less-contrast: #626370;
+    }
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--background);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+.navbar {
+    position: fixed;
+    z-index: 1000;
+    bottom: 25px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    background-color: #1e1e24a4;
+    backdrop-filter: blur(20px);
+    border-radius: var(--br-md);
+    padding: 0.25rem !important;
+}
+
+.navbar > .container-fluid {
+    padding: 0 !important;
+}
+
+.navbar-links {
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    border-radius: var(--br-md);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar-collapse {
+    height: max-content !important;
+}
+
+.nav-link {
+    color: var(--t-content);
+    padding: 16px 24px;
+    border-radius: var(--br-md);
+    border: 1px solid var(--border-layer-3);
+    background-color: var(--layer-3);
+    height: 100%;
+}
+
+.nav-link:hover {
+    background-color: var(--layer-4);
+    border: 1px solid var(--border-layer-4);
+    color: var(--secondary);
+}
+
+.nav-item {
+    height: 100% !important;
+}
+
+.background {
+    background-image: url('../content/Slide\ 16_9\ -\ 5.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.avatar {
+    width: 150px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    background-image: url('../content/IMG_20231003_140317_489.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--layer-1);
+    border: 1px solid var(--border-layer-1);
+    padding: 16px;
+    border-radius: var(--br-md);
+    margin-bottom: 12px;
+}
+
+.link i {
+    font-size: 48px;
+    color: var(--primary);
+    transition: color 0.5s cubic-bezier(0.85, 0.04, 0.2, 0.95);
+}
+
+.link i:hover {
+    color: var(--primary-hover);
+}
+
+.link i.ph-arrow-right {
+    font-size: 36px;
+    color: var(--t-header);
+    animation-timing-function: cubic-bezier(0.85, 0.04, 0.2, 0.95);
+}
+
+.link:hover i.ph-arrow-right {
+    color: var(--t-subtitle);
+    animation: slideInFromLeft 2s cubic-bezier(0.85, 0.04, 0.2, 0.95) infinite;
+}
+
+.link h4 {
+    color: var(--t-header);
+    margin: 0;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
